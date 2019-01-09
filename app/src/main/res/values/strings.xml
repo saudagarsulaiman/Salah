@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Salah</string>
+
+    <!--Common Utilities-->
+    <string name="Prmsns_nec">Permission necessary</string>
+    <string name="Prmsns_extrnl_strg">External Storage permission is necessary</string>
+    <string name="Prmsns_cam">Camera permission is necessary</string>
+    <string name="copied">Copied</string>
+
+
+
+</resources>
