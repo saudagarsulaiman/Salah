@@ -38,24 +38,16 @@ import static android.graphics.Color.BLACK;
 import static android.graphics.Color.WHITE;
 
 public final class CommonUtilities {
-    /******************** * Test Server Links  ****************************************************/
+    /********************* Server Links  ****************************************************/
 
-    //Local Link
+    //Link
+//    public static final String URL = "http://142.93.51.57:6062";
     public static final String URL = "http://142.93.51.57:6062";
-//    public static final String URL = "http://142.93.51.57:6061";
-//    public static final String URL = "http://142.93.51.57:6060";
-//    public static final String URL = "http://178.128.15.223:7070";
-
-    //Client Link
-//    public static final String URL = "https://";
 
 
     private static Locale myLocale;
 
 
-    /********************* Live Server Links ****************************************************/
-
-//    public static final String URL = "http:// ";
     public static boolean isConnectionAvailable(Context ctx) {
         //boolean bConnection = false;
         ConnectivityManager connMgr = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
