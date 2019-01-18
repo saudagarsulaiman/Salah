@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Salah</string>
+    <string name="app_name">Salah (صلاة)</string>
 
     <!--Common Utilities-->
     <string name="Prmsns_nec">Permission necessary</string>

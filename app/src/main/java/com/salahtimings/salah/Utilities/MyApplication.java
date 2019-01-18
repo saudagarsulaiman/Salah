@@ -7,10 +7,6 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
-import com.cryptowallet.deviantx.UI.Interfaces.AirdropWalletUIListener;
-import com.cryptowallet.deviantx.UI.Interfaces.AllCoinsUIListener;
-import com.cryptowallet.deviantx.UI.Interfaces.WalletUIChangeListener;
-
 import java.lang.reflect.Field;
 import java.util.Map;
 
@@ -28,17 +24,6 @@ public class MyApplication extends Application {
 
     public AppCompatActivity activity;
     SharedPreferences sharedPreferences;
-    public WalletUIChangeListener walletUIChangeListener;
-    public AllCoinsUIListener allCoinsUIListener;
-    public AirdropWalletUIListener airdropWalletUIListener;
-
-    public Boolean getHideBalance() {
-        return isHideBalance;
-    }
-
-    public void setHideBalance(Boolean hideBalance) {
-        isHideBalance = hideBalance;
-    }
 
     public Boolean getScreenShot() {
         return isScreenShot;
@@ -48,26 +33,7 @@ public class MyApplication extends Application {
         isScreenShot = screenShot;
     }
 
-    public Boolean get2FA() {
-        return is2FAactive;
-    }
-
-    public void set2FA(Boolean twoFA) {
-        is2FAactive = twoFA;
-    }
-
-    public int getDefaultWallet() {
-        return defaultWallet;
-    }
-
-    public void setDefaultWallet(int dDefaultWallet) {
-        defaultWallet = dDefaultWallet;
-    }
-
-    Boolean isHideBalance;
-    Boolean is2FAactive;
     Boolean isScreenShot;
-    int defaultWallet;
 
     @Override
     public void onCreate() {
@@ -75,11 +41,6 @@ public class MyApplication extends Application {
         String strLocale = CommonUtilities.loadLocale(this);
         myApplication = this;
         sharedPreferences = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
-        isHideBalance = sharedPreferences.getBoolean(CONSTANTS.hideBal, false);
-        isScreenShot = sharedPreferences.getBoolean(CONSTANTS.screenshot, false);
-        is2FAactive = sharedPreferences.getBoolean(CONSTANTS.twoFactorAuth, false);
-        defaultWallet = sharedPreferences.getInt(CONSTANTS.defaultWallet, 0);
-
     }
 
     public void disableScreenCapture(Activity context) {
@@ -106,30 +67,6 @@ public class MyApplication extends Application {
         }
         return true;
         //return false;
-    }
-
-    public void setWalletUIChangeListener(WalletUIChangeListener walletUIChangeListener) {
-        this.walletUIChangeListener = walletUIChangeListener;
-    }
-
-    public WalletUIChangeListener getWalletUIChangeListener() {
-        return walletUIChangeListener;
-    }
-
-    public void setAllCoinsUIListener(AllCoinsUIListener allCoinsUIListener) {
-        this.allCoinsUIListener = allCoinsUIListener;
-    }
-
-    public AllCoinsUIListener getAllCoinsUIListener() {
-        return allCoinsUIListener;
-    }
-
-    public void setAirdropWalletUIListener(AirdropWalletUIListener airdropWalletUIListener) {
-        this.airdropWalletUIListener = airdropWalletUIListener;
-    }
-
-    public AirdropWalletUIListener getAirdropWalletUIListener() {
-        return airdropWalletUIListener;
     }
 
 }
